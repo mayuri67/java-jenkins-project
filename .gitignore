@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled class file
 *.class
 
@@ -22,3 +23,46 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+=======
+# Maven build directory
+target/
+
+# Compiled Java files
+*.class
+
+# Log files
+*.log
+
+# IDE files - IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Jenkins temporary files
+.jenkins/
+
+# Local configuration
+application-local.properties
+application-local.yml
+>>>>>>> 30ef72a (java project)
