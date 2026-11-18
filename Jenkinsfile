@@ -101,26 +101,26 @@ pipeline {
 
             steps {
 
-                withCredentials([
-                    file(
-                        credentialsId: 'microk8s-kubeconfig',
-                        variable: 'KUBECONFIG_FILE'
-                    )
-                ]) {
+                // withCredentials([
+                //     file(
+                //         credentialsId: 'microk8s-kubeconfig',
+                //         variable: 'KUBECONFIG_FILE'
+                //     )
+                // ]) {
 
                     sh '''
-                    export KUBECONFIG=$KUBECONFIG_FILE
+                    #export KUBECONFIG=$KUBECONFIG_FILE
 
-                    kubectl apply -f k8s/deployment.yaml
+                    /usr/local/bin/kubectl apply -f k8s/deployment.yaml
 
-                    kubectl set image deployment/java-app \
+                    /usr/local/bin/kubectl set image deployment/java-app \
                     java-app=mayuri67/java-app:${BUILD_NUMBER}
 
-                    kubectl rollout status deployment/java-app \
+                    /usr/local/bin/kubectl rollout status deployment/java-app \
                     --timeout=180s
                     '''
 
-                }
+                //}
             }
         }
 
